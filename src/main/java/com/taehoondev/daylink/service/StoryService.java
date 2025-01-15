@@ -19,8 +19,14 @@ public class StoryService {
         return storyRepository.save(request.toEntity());
     }
 
-    // 스토리 조회 메서드
+    // 전체 스토리 조회 메서드
     public List<Story> findAll() {
         return storyRepository.findAll();
+    }
+
+    // 특정 스토리 조회 메서드
+    public Story findById(long id) {
+        return storyRepository.findById(id)
+                .orElseThrow(()->new IllegalArgumentException("not found: " + id));
     }
 }
