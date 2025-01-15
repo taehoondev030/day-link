@@ -2,7 +2,9 @@ package com.taehoondev.daylink.service;
 
 import com.taehoondev.daylink.domain.Story;
 import com.taehoondev.daylink.dto.AddStoryRequest;
+import com.taehoondev.daylink.dto.UpdateStoryRequest;
 import com.taehoondev.daylink.repository.StoryRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,5 +30,21 @@ public class StoryService {
     public Story findById(long id) {
         return storyRepository.findById(id)
                 .orElseThrow(()->new IllegalArgumentException("not found: " + id));
+    }
+
+    // 스토리 삭제 메서드
+    public void delete(long id) {
+        storyRepository.deleteById(id);
+    }
+
+    // 스토리 수정 메서드
+    @Transactional // 작업을 하나의 단위로 묶어서 실행
+    public Story update(long id, UpdateStoryRequest request) {
+        Story story = storyRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+
+        story.update(request.getTitle(), request.getContent());
+
+        return story;
     }
 }

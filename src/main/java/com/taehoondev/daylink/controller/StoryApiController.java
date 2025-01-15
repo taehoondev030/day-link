@@ -3,16 +3,14 @@ package com.taehoondev.daylink.controller;
 import com.taehoondev.daylink.domain.Story;
 import com.taehoondev.daylink.dto.AddStoryRequest;
 import com.taehoondev.daylink.dto.StoryResponse;
+import com.taehoondev.daylink.dto.UpdateStoryRequest;
 import com.taehoondev.daylink.service.StoryService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -47,5 +45,21 @@ public class StoryApiController {
 
         return ResponseEntity.ok()
                 .body(new StoryResponse(story));
+    }
+
+    @DeleteMapping("/api/stories/{id}")
+    public ResponseEntity<Void> deleteStory(@PathVariable long id) {
+        storyService.delete(id);
+
+        return ResponseEntity.ok()
+                .build();
+    }
+
+    @PutMapping("/api/stories/{id}")
+    public ResponseEntity<Story> updateStory(@PathVariable long id, @RequestBody UpdateStoryRequest request) {
+        Story updatedStory = storyService.update(id, request);
+
+        return ResponseEntity.ok()
+                .body(updatedStory);
     }
 }
