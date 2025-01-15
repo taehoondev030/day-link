@@ -6,6 +6,8 @@ import com.taehoondev.daylink.repository.StoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor // final 혹은 @NotNull 필드의 생성자 추가
 @Service
 public class StoryService {
@@ -15,5 +17,10 @@ public class StoryService {
     // 스토리 추가 메서드
     public Story save(AddStoryRequest request) {
         return storyRepository.save(request.toEntity());
+    }
+
+    // 스토리 조회 메서드
+    public List<Story> findAll() {
+        return storyRepository.findAll();
     }
 }
