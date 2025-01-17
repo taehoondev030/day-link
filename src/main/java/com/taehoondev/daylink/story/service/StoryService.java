@@ -1,9 +1,9 @@
-package com.taehoondev.daylink.service;
+package com.taehoondev.daylink.story.service;
 
-import com.taehoondev.daylink.domain.Story;
-import com.taehoondev.daylink.dto.AddStoryRequest;
-import com.taehoondev.daylink.dto.UpdateStoryRequest;
-import com.taehoondev.daylink.repository.StoryRepository;
+import com.taehoondev.daylink.story.domain.Story;
+import com.taehoondev.daylink.story.dto.AddStoryRequest;
+import com.taehoondev.daylink.story.dto.UpdateStoryRequest;
+import com.taehoondev.daylink.story.repository.StoryRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

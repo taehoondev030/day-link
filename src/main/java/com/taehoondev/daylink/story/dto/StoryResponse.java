@@ -1,6 +1,6 @@
-package com.taehoondev.daylink.dto;
+package com.taehoondev.daylink.story.dto;
 
-import com.taehoondev.daylink.domain.Story;
+import com.taehoondev.daylink.story.domain.Story;
 import lombok.Getter;
 
 @Getter

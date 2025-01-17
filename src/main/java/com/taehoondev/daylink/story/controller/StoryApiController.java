@@ -1,11 +1,10 @@
-package com.taehoondev.daylink.controller;
+package com.taehoondev.daylink.story.controller;
 
-import com.taehoondev.daylink.domain.Story;
-import com.taehoondev.daylink.dto.AddStoryRequest;
-import com.taehoondev.daylink.dto.StoryResponse;
-import com.taehoondev.daylink.dto.UpdateStoryRequest;
-import com.taehoondev.daylink.service.StoryService;
-import lombok.Getter;
+import com.taehoondev.daylink.story.domain.Story;
+import com.taehoondev.daylink.story.dto.AddStoryRequest;
+import com.taehoondev.daylink.story.dto.StoryResponse;
+import com.taehoondev.daylink.story.dto.UpdateStoryRequest;
+import com.taehoondev.daylink.story.service.StoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

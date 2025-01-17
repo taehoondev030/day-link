@@ -1,4 +1,4 @@
-package com.taehoondev.daylink.dto;
+package com.taehoondev.daylink.story.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
