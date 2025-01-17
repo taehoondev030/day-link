@@ -36,4 +36,16 @@ public class StoryViewController {
 
         return "story";
     }
+
+    @GetMapping("/new-story")
+    public String newStory(@RequestParam(required = false) Long id, Model model) {
+        if (id == null) {
+            model.addAttribute("story", new StoryViewResponse());
+        } else {
+            Story story = storyService.findById(id);
+            model.addAttribute("story", new StoryViewResponse(story));
+        }
+
+        return "newStory";
+    }
 }

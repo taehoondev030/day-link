@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Getter
 public class StoryViewResponse {
 
-    private long id;
+    private Long id;
     private String title;
     private String content;
     private LocalDateTime createdAt;
