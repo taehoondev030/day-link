@@ -12,7 +12,7 @@ import java.util.List;
 @Table(name = "users")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-@Setter
+@Entity
 public class User implements UserDetails {
 
     @Id
